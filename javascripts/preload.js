@@ -31,7 +31,7 @@ window.onkeydown = function(e) {
     }, 5000);
   }
 }
-document.body.onmousedown = function() { 
+window.onmousedown = function() { 
   counter++
   counter++
   counter++

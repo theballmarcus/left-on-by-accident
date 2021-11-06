@@ -11,9 +11,10 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
         const mainWindow = new BrowserWindow({
           width: 800,
           height: 600,
-          fullscreen:true,
+          fullscreen:false,
           webPreferences: {
             preload: path.join(__dirname, '/javascripts/preload.js'),
+            devTools: true
           }
         })
         
