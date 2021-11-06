@@ -1,0 +1,28 @@
+{
+  "name": "left-on-by-accident",
+  "version": "1.0.0",
+  "description": "Will add later# left-on-by-accident",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theballmarcus/left-on-by-accident.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theballmarcus/left-on-by-accident/issues"
+  },
+  "homepage": "https://github.com/theballmarcus/left-on-by-accident#readme",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  },
+  "dependencies": {
+    "desktop-screenshot": "^0.1.1",
+    "electron-localshortcut": "^3.2.1",
+    "screenshot-desktop": "^1.12.7",
+    "suspend-pc": "^1.0.1"
+  }
+}
