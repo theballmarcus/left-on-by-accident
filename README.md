@@ -56,9 +56,11 @@ Then give it a name (the name doesn't matter) and in "command" type:
 
 ## But how do I escape?
 
-When you have the program running, and you want to disable it, use the hotkey *ctrl+alt+a* and then *alt+tab*. This will close the program
+When you have the program running, and you want to disable it, use the hotkey *ctrl+alt+a* - which is the *save_hotkey* in [config.json](/config.json) and then *alt+tab*. This will close the program safely without suspending the pc.
 
 
+
+You can also change *turn_off_keys_global* to what you would like in [config.json](/config.json).
 
 
 

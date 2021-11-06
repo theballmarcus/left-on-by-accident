@@ -2,19 +2,19 @@ const { app, BrowserWindow, globalShortcut, ipcMain} = require('electron')
 const path = require('path')
 const screenshot = require('screenshot-desktop')
 const electronLocalshortcut = require('electron-localshortcut');
+let config = require('./config.json')
 
 closeable = false
-turnoff_keys_global = ["Alt+tab", "F11"]
-turnoff_keys_local = ["Alt+Tab", "super+Tab"]
+
 screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
     function createWindow () {
         const mainWindow = new BrowserWindow({
           width: 800,
           height: 600,
-          fullscreen:false,
+          fullscreen:true,
           webPreferences: {
             preload: path.join(__dirname, '/javascripts/preload.js'),
-            devTools: true
+            devTools: false
           }
         })
         
@@ -32,11 +32,11 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
             }
         })
 
-        globalShortcut.register('Alt+CommandOrControl+A', () => {
+        globalShortcut.register(config.save_hotkey, () => {
             closeable = true
             console.log("App is now closeable")
         })
-        for(i of turnoff_keys_global) {
+        for(i of config.turn_off_keys_global) {
             globalShortcut.register(i, (e) => {
                 app.quit()
             }) 
