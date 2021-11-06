@@ -31,3 +31,16 @@ window.onkeydown = function(e) {
     }, 5000);
   }
 }
+document.body.onmousedown = function() { 
+  counter++
+  counter++
+  counter++
+  if(counter > 7) {
+    document.body.style.backgroundImage = "url('../assets/bsod.png')"; 
+    setTimeout(function () {
+      document.body.style.backgroundImage = "url('../assets/black.png')"; 
+      sleep()
+      ipcRenderer.send('asynchronous-message', 'quit')
+  }, 5000);
+}
+}
