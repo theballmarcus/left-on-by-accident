@@ -54,7 +54,7 @@ Then give it a name (the name doesn't matter) and in "command" type:
 
 
 
-## But how to I escape?
+## But how do I escape?
 
 When you have the program running, and you want to disable it, use the hotkey *ctrl+alt+a* and then *alt+tab*. This will close the program
 
