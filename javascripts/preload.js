@@ -25,7 +25,6 @@ window.onkeydown = function(e) {
     document.body.style.backgroundImage = "url('../assets/bsod.png')"; 
     setTimeout(function () {
       document.body.style.backgroundImage = "url('../assets/black.png')"; 
-      sleep()
       ipcRenderer.send('asynchronous-message', 'quit')
     }, 5000);
   }
@@ -34,7 +33,6 @@ window.onkeydown = function(e) {
       document.body.style.backgroundImage = "url('../assets/bsod.png')"; 
       setTimeout(function () {
         document.body.style.backgroundImage = "url('../assets/black.png')"; 
-        sleep()
         ipcRenderer.send('asynchronous-message', 'quit')
     }, 5000);
   }
@@ -47,7 +45,6 @@ window.onmousedown = function() {
     document.body.style.backgroundImage = "url('../assets/bsod.png')"; 
     setTimeout(function () {
       document.body.style.backgroundImage = "url('../assets/black.png')"; 
-      sleep()
       ipcRenderer.send('asynchronous-message', 'quit')
   }, 5000);
 }

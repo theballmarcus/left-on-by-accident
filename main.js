@@ -7,6 +7,7 @@ var sleep = require("suspend-pc");
 
 
 closeable = false
+counter = 0
 
 screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
     function createWindow () {
@@ -30,7 +31,13 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
               app.quit()
           } else {
               console.log('Prevented closing')
-              e.preventDefault()
+              counter++
+              if(counter > 1) {
+                goSleep()
+              } else {
+                
+                e.preventDefault()
+              }
           }
         })
         globalShortcut.register(config.save_hotkey, () => {
@@ -67,7 +74,11 @@ ipcMain.on("asynchronous-message", (event, arg) => {
   console.log("asynchronous-message received ");
   // event.sender.send('asynchronous-reply', 'pong')
   if(arg == "quit") {
-    closeable = true
-    app.quit()
+    goSleep()
   }
 });
+function goSleep() {
+  sleep()
+  closeable = true
+  app.quit()
+}
