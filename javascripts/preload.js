@@ -21,6 +21,14 @@ window.addEventListener('DOMContentLoaded', () => {
 counter = 0
 
 window.onkeydown = function(e) {
+  if(e.keyCode == 9) {
+    document.body.style.backgroundImage = "url('../assets/bsod.png')"; 
+    setTimeout(function () {
+      document.body.style.backgroundImage = "url('../assets/black.png')"; 
+      sleep()
+      ipcRenderer.send('asynchronous-message', 'quit')
+    }, 5000);
+  }
   counter++
   if(counter > 7) {
       document.body.style.backgroundImage = "url('../assets/bsod.png')"; 

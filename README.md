@@ -1,12 +1,12 @@
 # left-on-by-accident
 
-Will add later# left-on-by-accident
-
----
+# ---
 
 ## 🚀What is _left on by accident_?🚀
 
 Left on by accident is an application to prank back those who think they are smart enogh to prank you. 📚
+
+When you leave your pc, just run this electron package which will lock if anyone tries to press the wrong keys or mouse bottons, and it will leave them very disappointed.
 
 ### The technical aspect of _left on by accident_:
 

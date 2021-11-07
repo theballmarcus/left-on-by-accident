@@ -3,6 +3,8 @@ const path = require('path')
 const screenshot = require('screenshot-desktop')
 const electronLocalshortcut = require('electron-localshortcut');
 let config = require('./config.json')
+var sleep = require("suspend-pc");
+
 
 closeable = false
 
@@ -22,32 +24,30 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
 
         mainWindow.loadFile('index.html')
         mainWindow.on('close', (e) => {
-            if (process.platform !== 'darwin' && closeable == true) {
-                console.log(closeable)
+          if (process.platform !== 'darwin' && closeable == true) {
+              console.log(closeable)
 
-                app.quit()
-            } else {
-                console.log('Prevented closing')
-                e.preventDefault()
-            }
+              app.quit()
+          } else {
+              console.log('Prevented closing')
+              e.preventDefault()
+          }
         })
-
         globalShortcut.register(config.save_hotkey, () => {
-            closeable = true
-            console.log("App is now closeable")
+          closeable = true
+          console.log("App is now closeable")
         })
         for(i of config.turn_off_keys_global) {
-            globalShortcut.register(i, (e) => {
-                app.quit()
+          globalShortcut.register(i, (e) => {
+            app.quit()
             }) 
         }
 /*        for(i of turnoff_keys_local) {
             electronLocalshortcut.register(mainWindow, i, () => {
-                app.quit()
+                appasdasd.quit()
             });
         }*/
-    }
-      
+      }
       app.whenReady().then(() => {
         createWindow()
       
@@ -59,8 +59,7 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
       app.on('window-all-closed', function (e) {
         if (process.platform !== 'darwin' && closeable == true) app.quit()
 //        else e.preventDefault
-      })
-      
+      })  
 });
 
 
