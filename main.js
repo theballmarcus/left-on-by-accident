@@ -9,7 +9,8 @@ var sleep = require("suspend-pc");
 closeable = false
 counter = 0
 
-screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
+app.disableHardwareAcceleration()
+screenshot({filename: 'assets/screenshot.jpg' }).then((imgPath) => {
     function createWindow () {
         const mainWindow = new BrowserWindow({
           width: 800,

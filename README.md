@@ -14,6 +14,12 @@ It's built using node.js and electron. When you launch the app, it will start of
 
 
 
+### Before installing
+
+It is very important that you use X11 as display server if you are running ubuntu! Otherwise it will not work - I debbuged around for quite a while to figure this one out.
+
+
+
 # ❓SO HOW CAN I USE IT????? ❓
 
 **USE IT AT OWN RISK!!!!**
@@ -38,8 +44,6 @@ to download the packages. Now you can run it using:
 npm run start
 ```
 
-
-
 **Optionally** you can setup a hotkey to activate the script. 
 
 ---
@@ -52,17 +56,11 @@ Then give it a name (the name doesn't matter) and in "command" type:
 
 > npm run --prefix /path/to/folder/with/package.json start
 
-
-
 ## But how do I escape?
 
 When you have the program running, and you want to disable it, use the hotkey *ctrl+alt+a* - which is the *save_hotkey* in [config.json](/config.json) and then *alt+tab*. This will close the program safely without suspending the pc.
 
-
-
 You can also change *turn_off_keys_global* to what you would like in [config.json](/config.json).
-
-
 
 Contributers:
 
