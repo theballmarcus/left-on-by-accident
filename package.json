@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/theballmarcus/left-on-by-accident#readme",
   "devDependencies": {
-    "electron": "^15.3.0"
+    "electron": "^15.3.1"
   },
   "dependencies": {
     "desktop-screenshot": "^0.1.1",

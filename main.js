@@ -10,7 +10,8 @@ closeable = false
 counter = 0
 
 app.disableHardwareAcceleration()
-screenshot({filename: 'assets/screenshot.jpg' }).then((imgPath) => {
+
+screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
     function createWindow () {
         const mainWindow = new BrowserWindow({
           width: 800,
@@ -46,6 +47,7 @@ screenshot({filename: 'assets/screenshot.jpg' }).then((imgPath) => {
           console.log("App is now closeable")
         })
         for(i of config.turn_off_keys_global) {
+          console.log(i)
           globalShortcut.register(i, (e) => {
             app.quit()
             }) 
