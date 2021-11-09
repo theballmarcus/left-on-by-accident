@@ -1,4 +1,5 @@
 {
     "save_hotkey" : "Alt+CommandOrControl+A",
-    "turn_off_keys_global" : ["Alt+Tab", "F11", "CommandOrControl+C", "Enter", "Alt", "Backspace", "Escape", "Delete", "Ctrl+Q", "Ctrl+D"]
+    "turn_off_keys_global" : ["Alt+Tab", "F11", "CommandOrControl+C", "Enter", "Alt", "Backspace", "Escape", "Delete", "Ctrl+Q", "Ctrl+D"],
+    "sleep" : "no"
 }

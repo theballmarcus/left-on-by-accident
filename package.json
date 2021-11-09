@@ -22,6 +22,7 @@
   "dependencies": {
     "desktop-screenshot": "^0.1.1",
     "electron-localshortcut": "^3.2.1",
+    "lock-system": "^3.0.1",
     "screenshot-desktop": "^1.12.7",
     "suspend-pc": "^1.0.1"
   }

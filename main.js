@@ -3,8 +3,7 @@ const path = require('path')
 const screenshot = require('screenshot-desktop')
 const electronLocalshortcut = require('electron-localshortcut');
 let config = require('./config.json')
-var sleep = require("suspend-pc");
-
+const { exec } = require("child_process");
 
 closeable = false
 counter = 0
@@ -35,7 +34,8 @@ screenshot({filename: 'assets/screenshot.png' }).then((imgPath) => {
               console.log('Prevented closing')
               counter++
               if(counter > 1) {
-                goSleep()
+                e.preventDefault()
+                if(config.sleep == "yes") goSleep()
               } else {
                 
                 e.preventDefault()
@@ -77,11 +77,21 @@ ipcMain.on("asynchronous-message", (event, arg) => {
   console.log("asynchronous-message received ");
   // event.sender.send('asynchronous-reply', 'pong')
   if(arg == "quit") {
-    goSleep()
+    if(config.sleep == "yes") goSleep()
   }
 });
 function goSleep() {
-  sleep()
+  exec("systemctl suspend", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+});
   closeable = true
   app.quit()
 }
