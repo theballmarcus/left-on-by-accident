@@ -16,8 +16,11 @@ It's built using node.js and electron. When you launch the app, it will start of
 
 ### Before installing
 
-It is very important that you use X11 as display server if you are running ubuntu! Otherwise it will not work - I debbuged around for quite a while to figure this one out.
+It is very important that you use X11 as display server if you are running ubuntu! Otherwise it will not work - I debugged around for quite a while to figure this one out.
 
+### IT IS NOT COMPLETELY SAFE...
+
+Linux doesn't allow me to block the Super key. This is quite important. People will be able to start a terminal etc., but it is really hard for them to see what they are doing.
 
 
 # ❓SO HOW CAN I USE IT????? ❓
